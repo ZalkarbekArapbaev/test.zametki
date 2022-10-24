@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8by-xM-kJ9">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Zametki-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test_zametki" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bQB-gq-3pA">
+                                <rect key="frame" x="0.0" y="103" width="430" height="746"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="70" id="EOf-kI-NHl" customClass="MyTableViewCell" customModule="test_zametki" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="430" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EOf-kI-NHl" id="OwE-aC-JLf">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Suk-sF-2yQ">
+                                                    <rect key="frame" x="10" y="5" width="55" height="60"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMw-Gw-Hcu">
+                                                    <rect key="frame" x="73" y="5" width="337" height="55"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Suk-sF-2yQ" secondAttribute="trailing" constant="365" id="0xE-Ld-USW"/>
+                                                <constraint firstAttribute="bottom" secondItem="pMw-Gw-Hcu" secondAttribute="bottom" constant="10" id="CTU-IQ-0C5"/>
+                                                <constraint firstAttribute="bottom" secondItem="Suk-sF-2yQ" secondAttribute="bottom" constant="5" id="FRi-dO-WIS"/>
+                                                <constraint firstItem="Suk-sF-2yQ" firstAttribute="top" secondItem="OwE-aC-JLf" secondAttribute="top" constant="5" id="Mb3-4A-Pbs"/>
+                                                <constraint firstItem="pMw-Gw-Hcu" firstAttribute="leading" secondItem="Suk-sF-2yQ" secondAttribute="trailing" constant="8" symbolic="YES" id="TCb-EO-gfp"/>
+                                                <constraint firstItem="pMw-Gw-Hcu" firstAttribute="top" secondItem="OwE-aC-JLf" secondAttribute="top" constant="5" id="c6L-RY-qGT"/>
+                                                <constraint firstItem="Suk-sF-2yQ" firstAttribute="leading" secondItem="OwE-aC-JLf" secondAttribute="leading" constant="10" id="cgQ-dS-fD5"/>
+                                                <constraint firstAttribute="trailing" secondItem="pMw-Gw-Hcu" secondAttribute="trailing" constant="20" symbolic="YES" id="pOH-an-2nl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageKquar" destination="Suk-sF-2yQ" id="NUO-T2-h29"/>
+                                            <outlet property="labelZametki" destination="pMw-Gw-Hcu" id="1MD-Mu-oWB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bQB-gq-3pA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1hp-v7-wXJ"/>
+                            <constraint firstItem="bQB-gq-3pA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ir9-u2-j8J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bQB-gq-3pA" secondAttribute="bottom" id="MlS-rL-hYo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bQB-gq-3pA" secondAttribute="trailing" id="iD8-mN-SLn"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Zametki" id="TaK-4P-Dtf">
+                        <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="vfk-NR-jwr"/>
+                    <connections>
+                        <outlet property="tableView" destination="bQB-gq-3pA" id="NF4-MC-lOf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1899.0697674418604" y="3.8626609442060089"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="119-gN-i39">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8by-xM-kJ9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JlE-BX-7hD">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nyc-PZ-w7i" kind="relationship" relationship="rootViewController" id="6nH-nL-y7L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNO-hd-eEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.86046511627907" y="3.8626609442060089"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TUW-8j-6XC">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Nyc-PZ-w7i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ACF-dc-NIJ"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MpD-qR-wPh">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="AVw-B0-6GM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlq-Ne-nvJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.4651162790698" y="3.8626609442060089"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
